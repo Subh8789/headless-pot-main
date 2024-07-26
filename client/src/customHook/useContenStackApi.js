@@ -34,6 +34,6 @@ export default function useContentStackApi() {
       console.log(err);
     }
   );
-  }, []);
+  }, [Stack]);
   return contentData;
 }
