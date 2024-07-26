@@ -1,0 +1,16 @@
+{
+  "name": "CorsProxy",
+  "description": "Simple Cors Proxy",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {   
+    "start": "node server.js",
+    "build": "cd client && npm install --force && npm run build"    
+  },
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "cors": "^2.8.5",
+   "express": "^4.18.3",
+    "request": "~2.36.0"
+  }
+}
