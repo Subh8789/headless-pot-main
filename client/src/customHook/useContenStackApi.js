@@ -29,6 +29,6 @@ export default function useContentStackApi( pageInfo, entrypoint) {
       console.log(err);
     }
   );
-  }, []);
+  }, [Stack]);
   return contentData;
 }

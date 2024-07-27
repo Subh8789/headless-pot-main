@@ -19,7 +19,7 @@ function usePdpApiCall(api) {
         };
     
         fetchData();
-    }, []);
+    }, [api]);
     return {
         pdpData,
         error
