@@ -4,7 +4,7 @@ const express = require('express'),
     cors = require('cors'),
     app = express(); path = require("path");
 
-app.set('port', process.env.PORT || 3000);  
+app.set('port', process.env.PORT || 3004);
 
     // place holder for the data
 app.use(bodyParser.json());
@@ -197,8 +197,7 @@ app.all('/pif/api/*', function (req, res, next) {
 
         var targetURL = "https://qpublish-hbt.aws.aem.honeywell.com";
         
-        var token= "ewogICJ0eXAiIDogIkpXVCIsCiAgImFsZyIgOiAiUlMyNTYiCn0.ewogICJkb21haW4iIDogIjIzOTEiLAogICJhcHBJZCIgOiAiMjM5IiwKICAiaXNzIiA6ICJidWlsZGluZ3NidC5zdGFnZS5ob25leXdlbGwuY29tIiwKICAianRpIiA6ICI1NjA2NjQzYS1hMmQ1LTRiMzAtYWU3Yi1mNjBiZWEzZjdjMDIiLAogICJzdWIiIDogIjhjNjA2NDE1LWI3NWEtNDNmNS1hMWM0LTkyMzY0OGQ5MTBkNSIsCiAgImlhdCIgOiAxNzIxODM2OTAwLAogICJleHAiIDogMTcyMTgzODcwMAp9.ODRrfYeXs6x9AdXFLSvBT0xvc5BGCrCrL4SspBTsOdANVRSPaTiyNIqCDYcrsUIcQ68lIstu6v5a7TbGbcteu9k0-Q-YcjLscCPjAYRcK1vQxam-sNIetv_aA0CkBcVD5AfovmvxJ5J-HW1ImqmY5qzb9rlM9TeqiXzFwq97ls5K69GDun9O2CcdOrM_FHcBF2G0e1Hg80wh3aAJGdYLwtpOWheIOI1CeVMVDLWn-P3jbx_8wFgwbT052aMw8e7Nn-7vs9OM5lWdQ3NGvSymsCHHU0TPOwQ_n4bnJDHJh2jsxA44zXvNeCuYEbx7y4Lb0TfenZf6RzSj8dI0sgzrpg";
-
+        var token= "ewogICJ0eXAiIDogIkpXVCIsCiAgImFsZyIgOiAiUlMyNTYiCn0.ewogICJkb21haW4iIDogIjIzOTEiLAogICJhcHBJZCIgOiAiMjM5IiwKICAiaXNzIiA6ICJidWlsZGluZ3NidC5zdGFnZS5ob25leXdlbGwuY29tIiwKICAianRpIiA6ICIxZmExNTVjMi03MDhjLTRiYjItODIyMS02NjY5ZTNjMzJkYTkiLAogICJzdWIiIDogIjc1YjE0ZmY3LWRlYTctNDJlMS1iNzBkLTU5NmM2YmFhNDVhMiIsCiAgImlhdCIgOiAxNzIyMDgwNTEzLAogICJleHAiIDogMTcyMjA4MjMxMwp9.O6MXxR2_bWXGwG4egYwSUhZHWAPVTXo8w4YJB4vW-M-Yone4C_2CeSw5EpBmSsO54FDR8PH4lz48Vg_hwKKBRFIE32ivtRjzY2I1R9tWlNiiijgL1-x9tnq8mtA2ffKd-VGM_S3kDmRaB1nyC_r5Kamoi6Zr0b2aZ7ZkKpukMgJYdVssJMXWxKLBtFWXoIfgINFa-UpTdhQlCgAUTLcD-Zo3ciKNHTRxHns8aSdUsP61iplgw1RT50I0gOuufSG-jjKYrzEd2hAS69VyDXa45tto9au-pszEVJER7feKj8i9OS1VyAVx3PFB8y51M25t2PHcrTMM9M_9g5TbAINYDg"
         var cookieVal="2391-token="+token;
 
         request(
