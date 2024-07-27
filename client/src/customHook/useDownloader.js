@@ -2,10 +2,14 @@ import react, { useEffect ,useState} from "react";
 
 import axios from "axios";
 
-export default async function useDownloader() {
+export default async function useDownloader( _url, filename) {
+
+  console.log("url", _url);
+  console.log("filename", filename);
      try {
         const response = await axios.get(
-          "https://res.cloudinary.com/dz8qhefe6/image/upload/v1721397461/202-LS-014-2020.pdf",
+        //  "https://res.cloudinary.com/dz8qhefe6/image/upload/v1721397461/202-LS-014-2020.pdf",
+        _url,
           {
             responseType: "blob", 
           }
@@ -22,8 +26,8 @@ export default async function useDownloader() {
         tempLink.href = url;
         tempLink.setAttribute(
           "download",
-         // `bill_${User_Id}_${date}.pdf`
-            "bill.pdf"
+          `bill_${filename}_${date}.pdf`
+            //"bill.pdf"
         ); // Set the desired filename for the downloaded file
 
         // Append the <a> element to the body and click it to trigger the download

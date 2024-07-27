@@ -1,101 +1,70 @@
 import React from "react";
 
-const ImageGrid = () => {
+const ImageGrid = ({imageGrid}) => {
+  if (!imageGrid) return null;
+  //console.log("ImageGrid", imageGrid[2]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image);
+  //console.log("ImageGrid_img", imageGrid[2]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url);
+  
+ 
+/*
+  const img1 = imageGrid[2]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url;
+  const img2 = imageGrid[3]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url;
+  const img3 = imageGrid[4]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url;
+  const img4 = imageGrid[5]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url;
+  const img5 = imageGrid[6]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url;
+   const img6 = imageGrid[7]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url; 
+
+   const imgtext1 = imageGrid[2]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+  const imgtext2 = imageGrid[3]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+  const imgtext3 = imageGrid[4]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+  const imgtext4 = imageGrid[5]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+  const imgtext5 = imageGrid[6]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+  const imgtext6 = imageGrid[7]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image;
+*/
+  //const img1 = ImageGrid;
   return (
-    /*  <div className="Grid">
-      <div className="Grid-1">
-        <div className="title-1">Enhanced Responsivness</div>
-        <div className="div-level1">
-          <img
-            src="https://honeywell.scene7.com/is/image/honeywell/airplanes-on-airport-runway-hp-1:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="airplane on airport runway"
-            className="image-1"
-          />
-        </div>
-        <div className="title-2">Multi-layer Secuirty System</div>
-        <div className="div-level1">
-          <img
-            src="https://honeywell.scene7.com/is/image/honeywell/data-center-homepage-1:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="data-center"
-            className="image-2"
-          />
-        </div>
-        <div className="title-3">Digitized Maintenace</div>
-        <div className="div-level1">
-          <img
-            src="https://buildingsbt.stage.honeywell.com/content/dam/honeywell-building-technology/en-us/images/mosaic/healthcare-restricted-area.jpg"
-            alt="healthcare restrcited area"
-            className="image-3"
-          />
-        </div>
-      </div>
-      <div className="Grid-2">
-        <div className="title-4">
-          Hackers get stop signs instead of welcome mats
-        </div>
-        <div className="div-level2">
-          <img
-            src="https://honeywell.scene7.com/is/image/honeywell/services-cybersecurity-964x%20964:medium-stripe?wid=964&amp;hei=372&amp;dpr=off"
-            alt="Honeywell cyber secuirty service"
-            className="image-4"
-          />
-        </div>
-        <div className="div-level2">
-          <img
-            src="https://honeywell.scene7.com/is/image/honeywell/ebi-600-right-rail-964x964:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="ebi-600-right-rail"
-            className="image-5"
-          />
-        </div>
-      </div>
-      <div className="Grid-3">
-        <div className="title-5">
-          See the technological innovations
-          <span className="span-1"> that will power buildings of</span>{" "}
-          <span className="span-2">tomorrow...today</span>
-        </div>
-        <div className="div-level3">
-          <img
-            src="https://honeywell.scene7.com/is/image/honeywell/HBT_Alerton_Industries_Tile-2_750x480:1-1-square?wid=480&amp;hei=480&amp;dpr=off"
-            alt="HBT Alerton Inustries"
-            className="image-6"
-          />
-        </div>
-      </div>
-    </div> */
     <div className="collage">
+  { /*    { img1 && imgtext1 && 
        <img
-            src="https://honeywell.scene7.com/is/image/honeywell/airplanes-on-airport-runway-hp-1:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="airplane on airport runway"
+            src={img1}
+            alt={imgtext1}
             className="collage-image"
           />
-    
+    }
+      { img2 && imgtext2 && 
+       <img
+            src={img2}
+            alt={imgtext2}
+            className="collage-image"
+          />
+    }
+       { img3 && imgtext3 && 
+       <img
+            src={img3}
+            alt={imgtext3}
+            className="collage-image"
+          />
+    }
+       { img4 && imgtext4 && 
+       <img
+            src={img3}
+            alt={imgtext4}
+            className="collage-image"
+          />
+    } { img5 && imgtext5 && 
       <img
-            src="https://honeywell.scene7.com/is/image/honeywell/data-center-homepage-1:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="HBT Alerton Inustries"
-        className="collage-image"
-      />
-      <img
-            src="https://buildingsbt.stage.honeywell.com/content/dam/honeywell-building-technology/en-us/images/mosaic/healthcare-restricted-area.jpg"
-            alt="HBT Alerton Inustries"
-        className="collage-image"
-      />
-      <img
-            src="https://honeywell.scene7.com/is/image/honeywell/services-cybersecurity-964x%20964:medium-stripe?wid=964&amp;hei=372&amp;dpr=off"
-            alt="HBT Alerton Inustries"
-        className="collage-image"
-        style={{"width":"66.6%"}}
-      />
-      <img
-        src="https://honeywell.scene7.com/is/image/honeywell/HBT_Alerton_Industries_Tile-2_750x480:1-1-square?wid=480&amp;hei=480&amp;dpr=off"
-        alt="HBT Alerton Inustries"
-        className="collage-image"
-      />
-      <img
-            src="https://honeywell.scene7.com/is/image/honeywell/ebi-600-right-rail-964x964:1-1-square?wid=711&amp;hei=711&amp;dpr=off"
-            alt="HBT Alerton Inustries"
-        className="collage-image"
-      />
+           src={img5}
+           alt={imgtext5}
+           className="collage-image"
+         />
+   }
+     { img6 && imgtext6 && 
+       <img
+            src={img6}
+            alt={imgtext6}
+            className="collage-image"
+          />
+    } */}
     </div>
 
   );

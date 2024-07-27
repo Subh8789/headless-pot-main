@@ -2,7 +2,7 @@
 import ContentStack from 'contentstack';
 import { useState ,useEffect} from "react";
 
-export default function useContentStackApi() {
+export default function useContentStackApi( pageInfo, entrypoint) {
   const [contentData, setContentData] = useState([]);
   //Initialize the Contentstack Stack for react
   const Stack = ContentStack.Stack(
@@ -12,19 +12,14 @@ export default function useContentStackApi() {
   );
   //Get a Single Entry
  useEffect(() => {
-  const Query = Stack.ContentType("home_page")
-  .Entry("bltb33c024768d87c22")
+  const Query = Stack.ContentType(pageInfo)
+  .Entry(entrypoint)
   .toJSON()
   .fetch()
   .then(
     function success(entry) {
-      console.log(entry["title"]);
-      console.log("entry", entry);
       setContentData(entry.components);
-      console.log("entry", entry.components[0].teaser.content);
-
-      //setContentData(entry.components[0].teaser.content);
-
+    
       // Retrieve field value by providing a field's uid
       //console.log(entry.toJSON);
       // Convert the entry result object to JSON
@@ -34,6 +29,6 @@ export default function useContentStackApi() {
       console.log(err);
     }
   );
-  }, [Stack]);
+  }, []);
   return contentData;
 }

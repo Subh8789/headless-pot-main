@@ -1,12 +1,17 @@
 import React from 'react';
+const ImageBanner = ({imageBanner}) => {
 
-const ImageBanner = () => {
+if(!imageBanner) return null;
+console.log("ImageBanner", imageBanner?.imagebanner_image[0]?.url);
+const img1 = imageBanner?.imagebanner_image[0]?.url;
+//console.log("ImageBanner", img1);
+
   return (
     <div className="ImageBanner" id="div-1">
   <div className="image-container" id="div-2">
     <div id="div-3">
       <div>
-        <div><img src="https://honeywell.scene7.com/is/image/honeywell/man-with-laptop-1424x950:small-stripe?wid=855&amp;hei=543&amp;dpr=off" alt="man with laptop" className="banner-image" /></div>
+      {img1 && <div><img src={img1}/></div>}
       </div>
     </div>
   </div>
