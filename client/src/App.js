@@ -13,34 +13,6 @@ function App() {
 
   const {detailData, contactData, error} = useApicall();
 
- /* useEffect(() => {
-    const fetchData1 = async () => {
-      try {
-        const response = await axios.get( `${detailsApi}`);
-        ////console.log("detailsmainpage",response.data);
-        setDetailData(response.data); 
-        localStorage.setItem('Session_status', JSON.stringify(response.data.session_valid));
-      } catch (error) {
-        //console.error(error);
-      }
-    };
-    const fetchData2 = async () => {
-      try {
-        const response = await axios.get( `${contactApi}`);
-        ////console.log("setContactData", response.data);
-        setContactData(response.data); 
-      } catch (error) {
-        ////console.log(error);
-        ////console.log(error.response.data.session_valid)
-        setError(error.response.data.session_valid)
-      }
-    };
-
-    fetchData1();
-    fetchData2();
-  }, []);
-*/
-  
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -54,8 +26,6 @@ function App() {
     )
   )
 
-
- //console.log("detaildtaa",detailData)
   return (
     <div className="App">
       <RouterProvider router={router} />
