@@ -25,11 +25,12 @@ export default function Home() {
 
   console.log("contenapidatahook", data[0]?.herobanner?.banner_image[0].url);
 
+  console.log("imagegridgtext", data[2]?.imagegrid?.imagegrid_images);
   useEffect(() => { 
     setBannerData(data[0]?.herobanner);
    setSection2Data(data[1]?.section);
-   setImageGrid(data);
-   // setImageBanner(data[8]?.imagebanner);
+   setImageGrid(data[2]?.imagegrid?.imagegrid_images);
+   setImageBanner(data[3]?.imagebanner);
   },[data]);
 
   

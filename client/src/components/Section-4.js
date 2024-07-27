@@ -1,6 +1,7 @@
 import React from "react";
 
 const ImageGrid = ({imageGrid}) => {
+console.log("imagegrud from comp", imageGrid)
   if (!imageGrid) return null;
   //console.log("ImageGrid", imageGrid[2]?.imagegrid?.imagegrid_images?.alttext_for_imagegrid_image);
   //console.log("ImageGrid_img", imageGrid[2]?.imagegrid?.imagegrid_images?.imagegrid_image[0]?.url);
@@ -24,6 +25,15 @@ const ImageGrid = ({imageGrid}) => {
   //const img1 = ImageGrid;
   return (
     <div className="collage">
+
+    { imageGrid && imageGrid.map((imagegrid,index)=>(
+              <img
+                src={imagegrid?.imagegrid_image[0]?.url}
+                alt={imagegrid?.alttext_for_imagegrid_image}
+                className="collage-image"
+              />
+    ))
+    }
   { /*    { img1 && imgtext1 && 
        <img
             src={img1}
