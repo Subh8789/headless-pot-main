@@ -1,6 +1,6 @@
  
 
-const publicUrl =  process.env.REACT_APP_BASE_URL;
+const publicUrl =   "http://localhost:3004";
 
 
 const contactApi = `${publicUrl}/pif/api/account/v1/get-contact-details?appId=239`

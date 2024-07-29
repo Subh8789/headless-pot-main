@@ -16,7 +16,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "start": "react-scripts start",
@@ -41,7 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3004",
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.6.2"
   }
