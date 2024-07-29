@@ -189,6 +189,12 @@ let savedFavSoldResult= {
     "userType": ""
 }
 
+app.get('/api/test', (req, res) => {
+  res.json({
+    message:"ok"
+  });
+});
+
 app.all('/pif/api/*', function (req, res, next) {
     
     if (req.method === 'OPTIONS') {
@@ -199,6 +205,10 @@ app.all('/pif/api/*', function (req, res, next) {
         res.send(savedFavSoldResult);
     }*/
     else {
+
+     res.json({
+        message:"ok"
+      });
 
         var targetURL = "https://buildingsbt.stage.honeywell.com";
         
