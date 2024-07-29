@@ -189,6 +189,12 @@ let savedFavSoldResult= {
     "userType": ""
 }
 
+app.get('/test', (req, res) => {
+  res.json({
+    message:"ok"
+  });
+});
+
 app.all('/pif/api/*', function (req, res, next) {
     
     if (req.method === 'OPTIONS') {
