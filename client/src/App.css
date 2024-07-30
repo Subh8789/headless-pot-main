@@ -1,3 +1,6 @@
+@import url("./utils/css/pdp.css");
+
+
 * {
   font-family: "Honeywell Sans", Helvetica, Arial, sans-serif !important;
 }
@@ -494,7 +497,7 @@ li a img {
 }
 
 .banner-image {
-  width: 559;
+  width: 559px;
   height: 355.115px;
   margin-left: -6rem;
 }
@@ -835,4 +838,8 @@ li a img {
   margin-right: 2.5rem;
   }
 
-  
+
+
+  /*-----------------------pdp page--------------------------*/
+
+

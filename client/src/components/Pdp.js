@@ -5,8 +5,9 @@ import Minus from '../utils/icons/minus.svg'
 import Plus from '../utils/icons/plus.svg'
 import Success from '../utils/icons/success.svg'
 import CaratRight from '../utils/icons/caratright.svg';
-import CaratLeft from '../utils/icons/caratright.svg'; 
-import '../utils/css/pdp.css';
+import CaratLeft from '../utils/icons/caratright.svg';
+
+//import "../utils/css/pdppage.css";
 
 import { Link } from 'react-router-dom';
 import usePdpApiCall from '../customHook/usePdpApiCall';
@@ -16,8 +17,8 @@ import  {productdetailApi} from '../utils/ApiList/axiosapi.js';
 import useDownloader from '../customHook/useDownloader';
 
 const Pdp = () => {
-  
- 
+
+
 
   const [activeTab, setActiveTab] = useState('Overview');
   const [quantity, setQuantity] = useState(1);
@@ -76,139 +77,139 @@ const Pdp = () => {
   }
 
   return (
-    <div className="BEAMHK-Product">
-      <div className='top-beamhk'>
+      <div className="BEAMHK-Product">
+        <div className='top-beamhk'>
 
-        <div className='products-title-info'>
-        <h1>BEAMHK</h1>
-        <p>Heater Kit for Beam detector</p>
+          <div className='products-title-info'>
+            <h1>BEAMHK</h1>
+            <p>Heater Kit for Beam detector</p>
+          </div>
+
+          <div className='print-section'>
+            <nav className='print-nav'>
+              <ul className='print-nav-items'>
+                <li><a href="https://buildings.honeywell.com/us/en/ecommerce"><img src={Print} alt="Honeywell print icon" className='print-icon-1'/><span className='print-W'>Print With Price</span></a></li>
+                <li><a href="https://buildings.honeywell.com/us/en/ecommerce"><img src={Print} alt="Honeywell print icon" className='print-icon-2'/><span className='print-WO'>Print Without Price</span></a></li>
+
+              </ul>
+            </nav>
+          </div>
+
         </div>
 
-        <div className='print-section'>
-          <nav className='print-nav'>
-            <ul className='print-nav-items'>
-              <li><a href="https://buildings.honeywell.com/us/en/ecommerce"><img src={Print} alt="Honeywell print icon" className='print-icon-1'/><span className='print-W'>Print With Price</span></a></li>
-              <li><a href="https://buildings.honeywell.com/us/en/ecommerce"><img src={Print} alt="Honeywell print icon" className='print-icon-2'/><span className='print-WO'>Print Without Price</span></a></li>
+        <div className='middle-beamhk'>
 
-            </ul>
-          </nav>
-        </div>
-
-      </div>
-
-      <div className='middle-beamhk'>
-
-        <div className='image-side'>
-         {productimg && <div className='images'>
-          <img src={productimg[1].url} className='beamhk-image-2'/>
-          <img src={productimg[1].url} alt={productimg[1].altText} className='beamhk-image-1'/>
-          </div>}
-          <div className='add-to-cart-section'>
-            <div className='save-icon-box'>
+          <div className='image-side'>
+            {productimg && <div className='images'>
+              <img src={productimg[1].url} className='beamhk-image-2'/>
+              <img src={productimg[1].url} alt={productimg[1].altText} className='beamhk-image-1'/>
+            </div>}
+            <div className='add-to-cart-section'>
+              <div className='save-icon-box'>
                 <img src={Save} alt="Honeywell save icon" className='save-icon'/>
+              </div>
+              <div className='add-to-cart-button'>
+                <p className='add-to-cart-link'>ADD TO CART</p>
+              </div>
             </div>
-          <div className='add-to-cart-button'>
-            <p className='add-to-cart-link'>ADD TO CART</p>
-          </div>
-        </div>
 
-          <div className='compare-checkbox-section'>
-            <input
-                type='checkbox' 
-                className='compare-checkbox'
-            />
-            <label className='checkbox-label'>
+            <div className='compare-checkbox-section'>
+              <input
+                  type='checkbox'
+                  className='compare-checkbox'
+              />
+              <label className='checkbox-label'>
                 Compare
-            </label>
+              </label>
 
+            </div>
           </div>
-        </div>
 
-        <div className='product-info-side'>
-          <nav className='product-navbar'>
-            <ul className='product-nav-items'>
-              <li className={activeTab === 'Overview' ? 'active' : ''} onClick={() => handleTabClick('Overview')}>Overview</li>
-              <li className={activeTab === 'Specifications' ? 'active' : ''} onClick={() => handleTabClick('Specifications')}>Specifications</li>
-              <li className={activeTab === 'Resources' ? 'active' : ''} onClick={() => handleTabClick('Resources')}>Resources</li>
-              <li>Training</li>
-              <li>Replacement Products</li>
-            </ul>
-          </nav>
-          
-          <div className='product-content'>
-            {activeTab === 'Overview' && description && (
-              <div className='product-overview'>
-                <p className='product-desc-title'>Product Description</p>
-                <p className='product-desc-info'>{description}</p>
-                <p className='feats-and-benefits-title'>Features & Ben*</p>
-                <div className='second-level'>
-                <p>List Price</p>
-                <p>Your Price</p>
-                <p>UoM</p>
-                <p>Quantity</p>
-                <p>Subtotal</p>
-                </div>
+          <div className='product-info-side'>
+            <nav className='product-navbar'>
+              <ul className='product-nav-items'>
+                <li className={activeTab === 'Overview' ? 'active' : ''} onClick={() => handleTabClick('Overview')}>Overview</li>
+                <li className={activeTab === 'Specifications' ? 'active' : ''} onClick={() => handleTabClick('Specifications')}>Specifications</li>
+                <li className={activeTab === 'Resources' ? 'active' : ''} onClick={() => handleTabClick('Resources')}>Resources</li>
+                <li>Training</li>
+                <li>Replacement Products</li>
+              </ul>
+            </nav>
 
-                <div className='third-level'>
-                  <p className='crossed-line-price'>USD 71.43</p>
-                  <p>USD 32.50 <span className='discount-text'>(54.5% Discount)</span></p>
-                  <p>EA</p>
-                  <p className='quantity-box'>
-                    <img src={Minus} alt="Minus" onClick={handleDecrease} className='quantity-icon'/>
-                    {quantity}
-                    <img src={Plus} alt="Plus" onClick={handleIncrease} className='quantity-icon'/>
-                  </p>
-                  <p>USD 162.50</p>
-                </div>
+            <div className='product-content'>
+              {activeTab === 'Overview' && description && (
+                  <div className='product-overview'>
+                    <p className='product-desc-title'>Product Description</p>
+                    <p className='product-desc-info'>{description}</p>
+                    <p className='feats-and-benefits-title'>Features & Ben*</p>
+                    <div className='second-level'>
+                      <p>List Price</p>
+                      <p>Your Price</p>
+                      <p>UoM</p>
+                      <p>Quantity</p>
+                      <p>Subtotal</p>
+                    </div>
 
-                <div className='fourth-level'>
-                  <div className='amount-section'>
-                  <p className='amount-available-text'><img src={Success} alt="Honeywell success icon" 
-                  className='success-icon'/>5 Available on 08-JUL-2024</p>
+                    <div className='third-level'>
+                      <p className='crossed-line-price'>USD 71.43</p>
+                      <p>USD 32.50 <span className='discount-text'>(54.5% Discount)</span></p>
+                      <p>EA</p>
+                      <p className='quantity-box'>
+                        <img src={Minus} alt="Minus" onClick={handleDecrease} className='quantity-icon'/>
+                        {quantity}
+                        <img src={Plus} alt="Plus" onClick={handleIncrease} className='quantity-icon'/>
+                      </p>
+                      <p>USD 162.50</p>
+                    </div>
+
+                    <div className='fourth-level'>
+                      <div className='amount-section'>
+                        <p className='amount-available-text'><img src={Success} alt="Honeywell success icon"
+                                                                  className='success-icon'/>5 Available on 08-JUL-2024</p>
+                      </div>
+                      <p className='product-availability-text'>Product availabilty is estimated on current stock level,
+                        which may be different at time of order processing. No reservation has been performed at this time. Delivery Dates
+                        will be advised after order is processed.
+                      </p>
+                    </div>
                   </div>
-                  <p className='product-availability-text'>Product availabilty is estimated on current stock level, 
-                    which may be different at time of order processing. No reservation has been performed at this time. Delivery Dates
-                    will be advised after order is processed.
-                  </p>
-                </div>
-              </div>
 
-            )}
-            {activeTab === 'Specifications' &&  specifications && (
-              <div className='product-specifications'>
-                <table className='specifications-table'>
-                {
-                  specifications.map((specification, index) => (
-                    <tr key={index} className='table-rows'>
-                      <td className='table-headers'>{specification.code}</td>
-                      <td>{specification.value}</td>
-                    </tr>
-                  ))
-                }
-                </table>
-              </div>
-            )}
-            {activeTab === 'Resources' && resources && (
-              <div className='product-resources'>
-                <table className='resources-table'>
-                    <tr className='resources-table-rows'>
-                      <td className='resources-table-headers'>Name</td>
-                      <td className='resources-table-headers'>URL</td>
-                    </tr>
-                  {
-                    resources.map((resource, index) => (
-                      <tr key={index}>
-                         <td>{resource.resourceName}</td>
-                      <td><Link  onClick={()=>pdfDownload(resource.externalLink,resource.resourceName)} href={resource.externalLink} 
-                        className='download-link'>Download</Link></td>
+              )}
+              {activeTab === 'Specifications' &&  specifications && (
+                  <div className='product-specifications'>
+                    <table className='specifications-table'>
+                      {
+                        specifications.map((specification, index) => (
+                            <tr key={index} className='table-rows'>
+                              <td className='table-headers'>{specification.code}</td>
+                              <td>{specification.value}</td>
+                            </tr>
+                        ))
+                      }
+                    </table>
+                  </div>
+              )}
+              {activeTab === 'Resources' && resources && (
+                  <div className='product-resources'>
+                    <table className='resources-table'>
+                      <tr className='resources-table-rows'>
+                        <td className='resources-table-headers'>Name</td>
+                        <td className='resources-table-headers'>URL</td>
                       </tr>
-                    ))
-                  }
-                </table>
-              </div>
-            )}
+                      {
+                        resources.map((resource, index) => (
+                            <tr key={index}>
+                              <td>{resource.resourceName}</td>
+                              <td><Link  onClick={()=>pdfDownload(resource.externalLink,resource.resourceName)} href={resource.externalLink}
+                                         className='download-link'>Download</Link></td>
+                            </tr>
+                        ))
+                      }
+                    </table>
+                  </div>
+              )}
 
-           {/*
+              {/*
             {activeTab === 'Training' && (
               <div className='product-training'>
                 <p>Training content goes here...</p>
@@ -221,35 +222,35 @@ const Pdp = () => {
             )}
 
             */}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className='who-viewed-container'>
-        <h2 className='who-viewed-title'>People Who Viewed This item Also Viewed</h2>
-      </div>
+        <div className='who-viewed-container'>
+          <h2 className='who-viewed-title'>People Who Viewed This item Also Viewed</h2>
+        </div>
 
-      <div className='bottom-beamhk'>
-        <div className='carousel-container'>
-          <div className='carat-container' onClick={handlePrevious}>
-            <img src={CaratLeft} alt="Left carat" className="product-carat-left" />
-          </div>
-          <ul className='carousel-list'>
-            {visibleItems.map((item, index) => (
-              <li className='carousel-slide' key={index}>
-                <img src={item.src} alt={`Slide ${index}`} />
-                <p className='carousel-text-top'>{item.text}</p>
-                <p className='carousel-text-bottom'>{item.text2}</p>
-              </li>
-            ))}
-          </ul>
-          <div className='carat-container' onClick={handleNext}>
-            <img src={CaratRight} alt="Right carat" className="product-carat-right" />
+        <div className='bottom-beamhk'>
+          <div className='carousel-container'>
+            <div className='carat-container' onClick={handlePrevious}>
+              <img src={CaratLeft} alt="Left carat" className="product-carat-left" />
+            </div>
+            <ul className='carousel-list'>
+              {visibleItems.map((item, index) => (
+                  <li className='carousel-slide' key={index}>
+                    <img src={item.src} alt={`Slide ${index}`} />
+                    <p className='carousel-text-top'>{item.text}</p>
+                    <p className='carousel-text-bottom'>{item.text2}</p>
+                  </li>
+              ))}
+            </ul>
+            <div className='carat-container' onClick={handleNext}>
+              <img src={CaratRight} alt="Right carat" className="product-carat-right" />
+            </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
   );
 }
 

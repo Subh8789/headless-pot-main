@@ -1,6 +1,6 @@
  
 
-const publicUrl =   "https://feature--pot-main-test.netlify.app";
+const publicUrl =   "http://localhost:3004";
 
 
 const contactApi = `${publicUrl}/pif/api/account/v1/get-contact-details?appId=239`
